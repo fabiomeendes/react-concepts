@@ -3,9 +3,14 @@ import React, { Component } from 'react';
 // with class
 export default class Salutation extends Component {
 
-  state = {
-    type: this.props.type, // Good for us
-    name: this.props.name // Jenifer
+    state = {
+      type: this.props.type, // Good for us
+      name: this.props.name // Jenifer
+    }
+
+  constructor(props) {
+    super(props); // necessary
+    this.setType = this.setType.bind(this); // because inside the setType(), points to the current document (Salutation)    
   }
 
   setType(e) {
@@ -20,7 +25,7 @@ export default class Salutation extends Component {
   setName(e) {
     this.setState({ name: e.target.value })
   }  
-  
+
   render() {
     const { type, name }  = this.state;
 
@@ -28,7 +33,7 @@ export default class Salutation extends Component {
       <div>
         <h1> {type} {name}!</h1>
         <hr/>
-        <input type="text" placeholder="Type..." value={type} onChange={e => this.setType(e)}/>
+        <input type="text" placeholder="Type..." value={type} onChange={this.setType}/>
         <input type="text" placeholder="Name..." value={name} onChange={e => this.setName(e)}/>
       </div>
     )
