@@ -39,3 +39,13 @@ export default class Salutation extends Component {
     )
   } 
 }
+
+// in the index.js
+
+// import Salutation from './components/Salutation';
+
+// ReactDOM.render(
+//    <div>
+//      <Salutation type='Good for us' name='Jenifer'/>
+//    </div>
+// , document.getElementById('root'))

@@ -1,13 +1,13 @@
 import React from 'react'; // default
 import ReactDOM from 'react-dom' // default to render
 
-import Salutation from './components/Salutation';
+import Daddy from './components/Daddy';
 
 ReactDOM.render(
-   <div>
-     <Salutation type='Good for us' name='Jenifer'/>
-   </div>
-, document.getElementById('root'))
+  <div>
+    <Daddy name='Paul' lastName='Walker'/>
+  </div>
+, document.getElementById('root'));
 
 
 
